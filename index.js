@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
  const bot = new Discord.Client();
  
- var prefix = ("RpBot!")
+ var prefix = ("/")
  var randnum = 0;
  var battle_ennemy = false;
  
@@ -36,7 +36,7 @@ if(message.content.startsWith("/help")){
     const embed = new Discord.RichEmbed()
     .setTitle(``)
     .setDescription(`ça arrive bientôt`)
-    .setColor(0xcc0099)
+    .setColor(RANDOM)
     message.channel.send({embed})
 }
 }
