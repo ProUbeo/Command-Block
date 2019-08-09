@@ -36,7 +36,7 @@ if(message.content.startsWith("/help")){
     const embed = new Discord.RichEmbed()
     .setTitle(``)
     .setDescription(`ça arrive bientôt`)
-    .setColor(RANDOM)
+    .setColor('RANDOM')
     message.channel.send({embed})
 }
 }
