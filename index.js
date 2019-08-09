@@ -41,6 +41,8 @@ if(message.content.startsWith("/help")){
 }
 
   if(message.content.startsWith(prefix + "tp")){
+   let args = message.content.split(" ").slice(1)
+   let thingToEcho = args.join(" ")
             if(message.mentions.users.first()){
             const embed = new Discord.RichEmbed()
             .setTitle(``)
@@ -51,8 +53,6 @@ if(message.content.startsWith("/help")){
             message.channel.send({embed})
         }else{
             const embed = new Discord.RichEmbed()
-             let args = message.content.split(" ").slice(1)
-             let thingToEcho = args.join(" ")
             .setTitle(``)
             .setThumbnail(message.author.avatarURL)
             .setDescription(`${message.author} se téléporte en ${thingToEcho}`)
