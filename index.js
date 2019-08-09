@@ -29,15 +29,42 @@ if(message.content.startsWith("<@479899618008891413>")){
     const embed = new Discord.RichEmbed()
     .setTitle(``)
     .setDescription(`Bonjour ${message.author} !\nJe suis un bot qui retranscrit des commandes de Minecraft mais sur discord ^^\npour avoir la liste de mes commandes, faites **/help** (comme dans minecraft XD)`)
-    .setColor(0xcc0099)
+    .setColor('RANDOM')
     message.channel.send({embed})
 }
 if(message.content.startsWith("/help")){
     const embed = new Discord.RichEmbed()
     .setTitle(``)
-    .setDescription(`ça arrive bientôt`)
+    .setDescription(`/tp **mention de la personne a laquelle tu veux te téléporter**`)
     .setColor('RANDOM')
     message.channel.send({embed})
 }
+  if(message.content.startsWith("/tp ")){
+    const embed = new Discord.RichEmbed()
+    .setTitle(``)
+    .setDescription(`/tp **mention de la personne a laquelle tu veux te téléporter**`)
+    .setColor('RANDOM')
+    message.channel.send({embed})
+} 
+  if(message.content.startsWith(prefix + "tp")){
+            if(message.mentions.users.first()){
+            const embed = new Discord.RichEmbed()
+            .setTitle(``)
+            .setThumbnail(message.author.avatarURL)
+            .setDescription(`${message.author} se téléporte a ${message.mentions.users.first()}`)
+            .setColor('RANDOM')
+            
+            message.channel.send({embed})
+        }else{
+            const embed = new Discord.RichEmbed()
+             let args = message.content.split(" ").slice(1)
+             let thingToEcho = args.join(" ")
+            .setTitle(``)
+            .setThumbnail(message.author.avatarURL)
+            .setDescription(`${message.author} se téléporte en ${thingToEcho}`)
+            .setColor('RANDOM')
+            
+            message.channel.send({embed})
+        }}
 }
 )
