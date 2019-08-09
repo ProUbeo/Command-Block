@@ -15,10 +15,10 @@ const Discord = require('discord.js');
  
  bot.on("guildMemberAdd", member => {
     
-member.guild.channels.find("name", "entrer").send(`${member}, je te souhaite la bienvenue ! Je t'offre le pouvoir du rp (et pour l'utiliser... ah ! Tu connais pas ! Fait donc "rp!help" :3`)
+member.guild.channels.find("name", "général").send(`${member}, je te souhaite la bienvenue !`)
     })
     bot.on("guildMemberRemove", member => {
-    member.guild.channels.find("name", "entrer").send(`${member} n'a plus le pouvoir du RP`)
+    member.guild.channels.find("name", "général").send(`${member} meurs dans une explosion de creeper`)
     })
     
  
@@ -60,5 +60,15 @@ if(message.content.startsWith("/help")){
             
             message.channel.send({embed})
         }}
+if(message.content.startsWith("/summon")){
+ let args = message.content.split(" ").slice(1)
+ let thingToEcho = args.join(" ")
+    const embed = new Discord.RichEmbed()
+    .setTitle(``)
+    .setDescription(`${message.author} fait apparaître ${thingToEcho}`)
+    .setColor('RANDOM')
+    message.channel.send({embed})
+}
+
 }
 )
