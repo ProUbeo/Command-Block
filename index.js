@@ -39,13 +39,7 @@ if(message.content.startsWith("/help")){
     .setColor('RANDOM')
     message.channel.send({embed})
 }
-  if(message.content.startsWith("/tp ")){
-    const embed = new Discord.RichEmbed()
-    .setTitle(``)
-    .setDescription(`/tp **mention de la personne a laquelle tu veux te téléporter**`)
-    .setColor('RANDOM')
-    message.channel.send({embed})
-} 
+
   if(message.content.startsWith(prefix + "tp")){
             if(message.mentions.users.first()){
             const embed = new Discord.RichEmbed()
